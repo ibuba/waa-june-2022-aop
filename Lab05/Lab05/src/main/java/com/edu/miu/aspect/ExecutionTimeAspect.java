@@ -16,13 +16,13 @@ import java.time.LocalDate;
 public class ExecutionTimeAspect {
     private final ActivityLogService service;
 
-    @Around("@annotation(com.edu.miu.annotation.ExecutionTime)") // pointCut expression
+    @Around("@annotation(com.edu.miu.controller.annotation.ExecutionTime)") // pointCut expression
     public Object calculateExecutionTime(ProceedingJoinPoint proceedingJoinPoint) throws Throwable{
         long start = System.nanoTime();
         var result  = proceedingJoinPoint.proceed();
         long finish=System.nanoTime();
         System.out.println(proceedingJoinPoint.getSignature().getName()+" duration "+(finish-start));
-        service.saveLog(new ActivityLogDTO(0, LocalDate.now(),proceedingJoinPoint.getSignature().toLongString(),(finish-start)));
+        service.saveLog(new ActivityLogDTO(1, LocalDate.now(),proceedingJoinPoint.getSignature().toLongString(),(finish-start)));
         return result;
 }
 }

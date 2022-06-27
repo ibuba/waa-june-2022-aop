@@ -1,4 +1,4 @@
-package com.edu.miu.annotation;
+package com.edu.miu.controller.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

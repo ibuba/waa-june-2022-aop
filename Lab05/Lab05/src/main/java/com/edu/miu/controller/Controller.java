@@ -1,6 +1,6 @@
 package com.edu.miu.controller;
 
-import com.edu.miu.annotation.ExecutionTime;
+import com.edu.miu.controller.annotation.ExecutionTime;
 import com.edu.miu.dto.ProductDTO;
 import com.edu.miu.service.ProductService;
 import lombok.AllArgsConstructor;
